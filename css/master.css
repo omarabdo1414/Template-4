@@ -824,7 +824,7 @@ body {
 
         .servers .server {
             border: 2px solid #eee;
-            position: relative; 
+            position: relative;
         }
 
         .servers .server label {
@@ -837,6 +837,168 @@ body {
         }
     }
 }
+
+.profile-page {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .overview {
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+
+    .avatar-box {
+        width: 300px;
+
+        @media screen and (min-width: 767px) {
+            border-bottom: 1px solid #eee;
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .level {
+            height: 6px;
+            overflow: hidden;
+            margin: auto;
+            width: 70%;
+
+            span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-color: var(--blue-color);
+                border-radius: 6px;
+            }
+        }
+    }
+
+    .info-box {
+        h4 {
+            font-weight: normal;
+        }
+
+        .toggle-switch {
+            height: 20px;
+
+            @media screen and (max-width: 767px) {
+                margin: auto;
+            }
+
+            &::before {
+                width: 12px;
+                height: 12px;
+                font-size: 8px;
+            }
+        }
+
+        .toggle-checkbox:checked+.toggle-switch::before {
+            left: 17px;
+        }
+
+        .box {
+            flex-wrap: wrap;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            padding: 20px;
+            border-radius: 10px;
+            justify-content: space-between;
+
+            &>div {
+                padding: 10px 0 0;
+
+                @media screen and (min-width: 767px) {
+                    min-width: 300px;
+                }
+            }
+
+            div {
+                padding: 10px 0 0;
+            }
+        }
+
+        .box:hover {
+            background-color: #f5f5f5;
+        }
+    }
+
+    .other-data {
+
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+        }
+
+        .skills-card {
+            flex-grow: 1;
+
+            ul li {
+                padding: 15px 0;
+            }
+
+            ul li:not(:last-child) {
+                border-bottom: 1px solid #eee;
+            }
+
+            ul li span {
+                display: inline-flex;
+                padding: 4px 10px;
+                font-size: 14px;
+            }
+
+            ul li span:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+
+        .activities {
+            flex-grow: 2;
+
+            .activity:not(:last-child) {
+                border-bottom: 1px solid #eee;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+            }
+
+            .activity {
+
+                @media screen and (max-width: 767px) {
+                    flex-direction: column;
+                }
+
+                img {
+                    width: 64px;
+                    height: 64px;
+                    margin-right: 10px;
+
+                    @media screen and (max-width: 767px) {
+                        margin-right: 0;
+                        margin-bottom: 15px;
+                    }
+                }
+
+                .date {
+                    @media screen and (min-width: 768px) {
+                        margin-left: auto;
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+
+
 
 .blue .icon,
 .blue .progress {
@@ -855,7 +1017,7 @@ body {
 
 
 /* Settings Page Styling */
-.settings-page {
+.page {
     .toggle-checkbox {
         -webkit-appearance: none;
         appearance: none;

@@ -1287,7 +1287,82 @@ body {
     }
 }
 
-.plans-page {}
+.plans-page {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+
+    @media screen and (max-width: 767px) {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+
+    .plan {
+
+        .top {
+            border: 3px solid white;
+            outline: 3px solid transparent;
+        }
+
+        &.green .top {
+            outline-color: var(--green-color);
+        }
+
+        &.blue .top {
+            outline-color: var(--blue-color);
+        }
+
+        &.orange .top {
+            outline-color: var(--orange-color);
+        }
+
+        .price {
+            position: relative;
+            font-size: 40px;
+            font-weight: 500;
+            width: fit-content;
+            margin: auto;
+
+            span {
+                position: absolute;
+                left: -20px;
+                top: 0;
+                font-size: 25px;
+            }
+        }
+        ul {
+            margin-bottom: 10px;
+        }
+
+        ul li i:first-child {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        ul li {
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        ul li .yes {
+            color: var(--green-color);
+        }
+
+        ul li i:not(.yes, .help) {
+            color: var(--red-color);
+        }
+
+        ul li .help {
+            color: var(--grey-color);
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+    }
+}
 
 .blue .icon,
 .blue .progress {
